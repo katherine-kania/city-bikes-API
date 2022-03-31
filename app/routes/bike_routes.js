@@ -27,9 +27,17 @@ router.get('/citybikes', (req, res, next) => {
 })
 
 // SHOW
+// GET /citybikes/<id>
+router.get('citybikes/:id', (req, res, next) => {
+    const bikeId = req.params.id
+    Bike.findById(bikeId)
+        .then(handle404)
+        .then(bike => res.status(200).json({ bike: bike.toObject() }))
+        .catch(next)
+})
 
 // CREATE
-// POST /pets
+// POST /citybikes
 router.post('/citybikes', (req, res, next) => {
     Bike.create(req.body.bike)
     .then(bike => {
@@ -39,6 +47,7 @@ router.post('/citybikes', (req, res, next) => {
 })
 
 // UPDATE
+// PATCH /
 
 // REMOVE
 
