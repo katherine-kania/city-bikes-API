@@ -22,14 +22,24 @@ router.get('/citybikes', (req, res, next) => {
     .then(bikes => {
         return bikes.map(bike => bike.toObject())
     })
-    .then(bike => res.status(200).json({ bikes }))
+    .then(bikes => res.status(200).json({ bikes }))
     .catch(next)
 })
 
 // SHOW
 
 // CREATE
+// POST /pets
+router.post('/citybikes', (req, res, next) => {
+    Bike.create(req.body.bike)
+    .then(bike => {
+        res.status(201).json({ bike: bike.toObject() })
+    })
+    .catch(next)
+})
 
 // UPDATE
 
 // REMOVE
+
+module.exports = router

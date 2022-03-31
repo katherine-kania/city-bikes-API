@@ -4,17 +4,16 @@ const { Schema, model } = mongoose
 
 const bikeSchema = new Schema(
     {
-        name: {
-            type: String,
-            required: true
-        },
         city: {
             type: String,
             required: true
         },
-        country: {
+        company: {
             type: String,
             required: true
+        },
+        numStations: {
+            type: Number,
         }
     },{
             timestamps:true,
