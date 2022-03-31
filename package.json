@@ -1,7 +1,7 @@
 {
-  "name": "food-api",
+  "name": "city-bikes-data",
   "version": "1.0.0",
-  "description": "Asimple API that receives requests and sends JSON as a response for food nutrition data",
+  "description": "A simple API that receives requests and sends JSON as a response for city bikes data",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
