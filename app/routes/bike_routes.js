@@ -47,7 +47,16 @@ router.post('/citybikes', (req, res, next) => {
 })
 
 // UPDATE
-// PATCH /
+// PATCH /citybikes/<id>
+router.patch('/citybikes/:id', (req,res, next) => {
+    Bike.findById(req.params.id)
+        .then(handle404)
+        .then(bike => {
+            return bike.updateOne(req.body.bike)
+        })
+        .then(() => res.sendStatus(204))
+        .catch(next)
+})
 
 // REMOVE
 
