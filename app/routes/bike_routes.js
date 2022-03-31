@@ -59,5 +59,16 @@ router.patch('/citybikes/:id', (req,res, next) => {
 })
 
 // REMOVE
+// DELETE /citybikes/<id>
+router.patch('/citybikes/:id', (req,res, next) => {
+    Bike.findById(req.params.id)
+        .then(handle404)
+        .then(bike => {
+            bike.deleteOne()
+        })
+        .then(() => res.sendStatus(204))
+        .catch(next)
+})
+
 
 module.exports = router
