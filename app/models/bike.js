@@ -8,12 +8,23 @@ const bikeSchema = new Schema(
             type: String,
             required: true
         },
+        state: {
+            type: String
+        },
+        country:{
+            type: String,
+            required: true
+        },
         company: {
             type: String,
             required: true
         },
         numStations: {
             type: Number,
+        },
+        ebikes: {
+            type: Boolean,
+            required: true
         }
     },{
             timestamps:true,

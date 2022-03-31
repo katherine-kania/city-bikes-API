@@ -28,7 +28,7 @@ router.get('/citybikes', (req, res, next) => {
 
 // SHOW
 // GET /citybikes/<id>
-router.get('citybikes/:id', (req, res, next) => {
+router.get('/citybikes/:id', (req, res, next) => {
     const bikeId = req.params.id
     Bike.findById(bikeId)
         .then(handle404)
@@ -60,7 +60,7 @@ router.patch('/citybikes/:id', (req,res, next) => {
 
 // REMOVE
 // DELETE /citybikes/<id>
-router.patch('/citybikes/:id', (req,res, next) => {
+router.delete('/citybikes/:id', (req, res, next) => {
     Bike.findById(req.params.id)
         .then(handle404)
         .then(bike => {
